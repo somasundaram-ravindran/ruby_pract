@@ -1,0 +1,39 @@
+@import "materialize";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+nav {
+  color: black;
+  background-color: rgb(253, 152, 9);
+}
+#foot{
+  background-color: rgb(253, 152, 9);
+}
+
+p{
+  align: justify;
+}
+
+.btn {
+  background-color: rgb(253, 152, 9);
+}
+
+.sign-up-form{
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.whi{
+  color: white;
+}
+.width-signup{
+  width: 50%;
+}

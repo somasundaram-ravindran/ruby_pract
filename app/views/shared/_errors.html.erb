@@ -1,0 +1,14 @@
+<% if obj.errors.any? %>
+<div class="container">
+  <div class="card-panel red">
+    <div class="col s12 m12">
+      <%= pluralize(obj.errors.count,"error") %>
+      <ul>
+        <% obj.errors.full_messages.each do |message| %>
+        <li class="whi"> <%= message %>
+          <% end %>
+        </ul>
+        <% end %>
+      </div>
+    </div>
+</div>

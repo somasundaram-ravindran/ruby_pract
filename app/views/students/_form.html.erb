@@ -1,0 +1,39 @@
+<%= render 'shared/errors' , obj: @student%>
+<div class="sign-up-form">
+<div class="container">
+  <div class ="card-panel">
+    <div class="col s12 m12">
+      <div class="row center">
+      <h1 class="header"><%= (@student.new_record? ? "Sign up" : "Edit your profile")%></h1>
+    <%= form_for(@student, html: {class: "col s12" }) do |f| %>
+      <div class="row">
+        <div class="input-field col-12">
+          <%= f.text_field :name , placeholder: "Enter your name", autofocus: true %>
+          <%= f.label :name, class: "active"%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col-12">
+          <%= f.text_field :email ,placeholder: "Enter your email"%>
+          <%= f.label :email, class: "active"%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col-12">
+          <%= f.password_field :password , placeholder: "Enter your secret key"%>
+          <%= f.label :password, class: "active"%>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col-12">
+          <%= f.password_field :password_confirmation ,placeholder: "Re-Enter your secret key"%>
+          <%= f.label :password_confirmation, class: "active"%>
+        </div>
+      </div>
+        <%= f.button (@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit changes'.html_safe) , :class => 'btn waves-effect waves-light right' %>
+    <% end %>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
