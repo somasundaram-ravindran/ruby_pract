@@ -19,7 +19,9 @@ class StudentsController < ApplicationController
   def create
     @student=Student.new(student_params)
     if @student.save
-      flash[ :notice ] = "Login Successful"
+      UserMailer.welcome_email(@student).deliver_now
+      session[:student_id]=@student.id
+      flash[ :notice ] = "Sign up Successful"
       redirect_to @student
     else
       render 'new'
